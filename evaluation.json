@@ -1,0 +1,989 @@
+{
+  "scope": "Authored synthetic English sentence classification only; no real learner or learning-gain claim.",
+  "trainCount": 48,
+  "validation": {
+    "n": 18,
+    "rawCorrect": 9,
+    "accepted": 2,
+    "acceptedCorrect": 2,
+    "rows": [
+      {
+        "id": "validation-linear-1",
+        "text": "I expect direct proportional growth.",
+        "expected": "linear",
+        "predicted": "inverse",
+        "score": 0.26749417579233786,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-linear-2",
+        "text": "Both quantities increase by the same factor.",
+        "expected": "linear",
+        "predicted": "linear",
+        "score": 0.37712873381368867,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-linear-3",
+        "text": "The result is linear in the input.",
+        "expected": "linear",
+        "predicted": "linear",
+        "score": 0.2875693814451205,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-square-1",
+        "text": "A quadratic increase means squaring the scale.",
+        "expected": "square",
+        "predicted": "square",
+        "score": 0.29578302315261124,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-square-2",
+        "text": "I predict fourfold output for a doubled input.",
+        "expected": "square",
+        "predicted": "linear",
+        "score": 0.2875693814451205,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-square-3",
+        "text": "The output follows input squared.",
+        "expected": "square",
+        "predicted": "inverseSquare",
+        "score": 0.36622723949232344,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-cube-1",
+        "text": "A cubic relationship cubes the multiplier.",
+        "expected": "cube",
+        "predicted": "cube",
+        "score": 0.2875693814451205,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-cube-2",
+        "text": "I expect eightfold output when input doubles.",
+        "expected": "cube",
+        "predicted": "inverse",
+        "score": 0.2587562847872922,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-cube-3",
+        "text": "The result follows input cubed.",
+        "expected": "cube",
+        "predicted": "cube",
+        "score": 0.25640508833206566,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-inverse-1",
+        "text": "The output follows the inverse of the scale.",
+        "expected": "inverse",
+        "predicted": "inverseSquare",
+        "score": 0.6625396504097293,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-inverse-2",
+        "text": "A doubled input yields half the result.",
+        "expected": "inverse",
+        "predicted": "linear",
+        "score": 0.23238364106348833,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-inverse-3",
+        "text": "This is a reciprocal relationship.",
+        "expected": "inverse",
+        "predicted": "inverseSquare",
+        "score": 0.317740665003795,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-inverseSquare-1",
+        "text": "I predict inverse square scaling.",
+        "expected": "inverseSquare",
+        "predicted": "inverseSquare",
+        "score": 0.7567874998247133,
+        "deferred": false,
+        "reasons": []
+      },
+      {
+        "id": "validation-inverseSquare-2",
+        "text": "A doubled input reduces output to a quarter.",
+        "expected": "inverseSquare",
+        "predicted": "square",
+        "score": 0.23287518951199446,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-inverseSquare-3",
+        "text": "The reciprocal of the squared multiplier sets the result.",
+        "expected": "inverseSquare",
+        "predicted": "inverseSquare",
+        "score": 0.577528886160649,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-root-1",
+        "text": "The output follows a square root relationship.",
+        "expected": "root",
+        "predicted": "root",
+        "score": 0.8476909318367694,
+        "deferred": false,
+        "reasons": []
+      },
+      {
+        "id": "validation-root-2",
+        "text": "A fourfold input gives a doubled result.",
+        "expected": "root",
+        "predicted": "linear",
+        "score": 0.16666666666666666,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "validation-root-3",
+        "text": "I expect the positive root of the scale.",
+        "expected": "root",
+        "predicted": "root",
+        "score": 0.58930211190114,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      }
+    ]
+  },
+  "test": {
+    "n": 24,
+    "rawCorrect": 11,
+    "accepted": 4,
+    "acceptedCorrect": 4,
+    "rows": [
+      {
+        "id": "test-linear-1",
+        "text": "My guess is that the output is proportional to the input.",
+        "expected": "linear",
+        "predicted": "inverse",
+        "score": 0.29578302315261124,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-linear-2",
+        "text": "A twofold input causes a twofold output.",
+        "expected": "linear",
+        "predicted": "linear",
+        "score": 0.16666666666666666,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-linear-3",
+        "text": "The change is one for one.",
+        "expected": "linear",
+        "predicted": "linear",
+        "score": 0.8154050172254689,
+        "deferred": false,
+        "reasons": []
+      },
+      {
+        "id": "test-linear-4",
+        "text": "Halving the input should halve the result.",
+        "expected": "linear",
+        "predicted": "linear",
+        "score": 0.16666666666666666,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-square-1",
+        "text": "I think the result is proportional to the square of input.",
+        "expected": "square",
+        "predicted": "root",
+        "score": 0.31469704264246695,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-square-2",
+        "text": "Twofold input makes the result fourfold.",
+        "expected": "square",
+        "predicted": "linear",
+        "score": 0.16666666666666666,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-square-3",
+        "text": "Scaling by three gives ninefold output.",
+        "expected": "square",
+        "predicted": "cube",
+        "score": 0.30189952612461235,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-square-4",
+        "text": "Squaring the multiplier gives the output factor.",
+        "expected": "square",
+        "predicted": "linear",
+        "score": 0.16666666666666666,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-cube-1",
+        "text": "My prediction uses the cube of input.",
+        "expected": "cube",
+        "predicted": "cube",
+        "score": 0.2875693814451205,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-cube-2",
+        "text": "A twofold input change makes an eightfold result.",
+        "expected": "cube",
+        "predicted": "linear",
+        "score": 0.16666666666666666,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-cube-3",
+        "text": "Multiply the scale by itself three times.",
+        "expected": "cube",
+        "predicted": "cube",
+        "score": 0.38357412940188185,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-cube-4",
+        "text": "Scaling down by half leaves an eighth.",
+        "expected": "cube",
+        "predicted": "cube",
+        "score": 0.5360056951098264,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-inverse-1",
+        "text": "I expect inverse proportionality.",
+        "expected": "inverse",
+        "predicted": "inverseSquare",
+        "score": 0.3596646432878066,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-inverse-2",
+        "text": "Twofold input leaves half the output.",
+        "expected": "inverse",
+        "predicted": "inverseSquare",
+        "score": 0.2881330426699007,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-inverse-3",
+        "text": "The output multiplier is the reciprocal of the input multiplier.",
+        "expected": "inverse",
+        "predicted": "inverseSquare",
+        "score": 0.317740665003795,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-inverse-4",
+        "text": "Reducing the input by half makes output twice as large.",
+        "expected": "inverse",
+        "predicted": "root",
+        "score": 0.24597538765906157,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-inverseSquare-1",
+        "text": "My guess is an inverse square law.",
+        "expected": "inverseSquare",
+        "predicted": "inverseSquare",
+        "score": 0.7567874998247133,
+        "deferred": false,
+        "reasons": []
+      },
+      {
+        "id": "test-inverseSquare-2",
+        "text": "Twofold input makes output one quarter as large.",
+        "expected": "inverseSquare",
+        "predicted": "square",
+        "score": 0.3329180666049663,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-inverseSquare-3",
+        "text": "The output factor is one divided by input squared.",
+        "expected": "inverseSquare",
+        "predicted": "inverseSquare",
+        "score": 0.25725166009939116,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-inverseSquare-4",
+        "text": "Tripling the input reduces the result to one ninth.",
+        "expected": "inverseSquare",
+        "predicted": "inverseSquare",
+        "score": 0.4702139433450747,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-root-1",
+        "text": "My prediction is proportional to the square root of input.",
+        "expected": "root",
+        "predicted": "root",
+        "score": 0.87010998703263,
+        "deferred": false,
+        "reasons": []
+      },
+      {
+        "id": "test-root-2",
+        "text": "A ninefold input increase makes output threefold.",
+        "expected": "root",
+        "predicted": "linear",
+        "score": 0.16666666666666666,
+        "deferred": true,
+        "reasons": [
+          "Too little familiar language.",
+          "The model cannot separate the meanings reliably."
+        ]
+      },
+      {
+        "id": "test-root-3",
+        "text": "Use the positive square root for the multiplier.",
+        "expected": "root",
+        "predicted": "root",
+        "score": 0.9612753940795312,
+        "deferred": false,
+        "reasons": []
+      },
+      {
+        "id": "test-root-4",
+        "text": "An input reduced to a quarter gives half the output.",
+        "expected": "root",
+        "predicted": "square",
+        "score": 0.23049594812964594,
+        "deferred": true,
+        "reasons": [
+          "The model cannot separate the meanings reliably."
+        ]
+      }
+    ]
+  },
+  "baseline": {
+    "name": "Fixed keyword rule, authored before evaluation",
+    "n": 24,
+    "correct": 16
+  },
+  "ood": [
+    {
+      "text": "I do not think the output is linear.",
+      "label": "linear",
+      "score": 0.2875693814451205,
+      "margin": 0.13896509215085423,
+      "coverage": 0.14285714285714285,
+      "deferred": true,
+      "reasons": [
+        "Too little familiar language.",
+        "Negation, uncertainty or an unsupported combination needs your interpretation.",
+        "The model cannot separate the meanings reliably."
+      ],
+      "evidence": [
+        {
+          "feature": "linear",
+          "logOdds": 0.660177161322375
+        }
+      ],
+      "ranked": [
+        {
+          "label": "linear",
+          "log": -6.318968113746434,
+          "score": 0.2875693814451205
+        },
+        {
+          "label": "square",
+          "log": -6.979145275068809,
+          "score": 0.14860428929426628
+        },
+        {
+          "label": "inverse",
+          "log": -6.979145275068809,
+          "score": 0.14860428929426628
+        },
+        {
+          "label": "cube",
+          "log": -7.01211529430638,
+          "score": 0.14378469072256025
+        },
+        {
+          "label": "root",
+          "log": -7.064759027791801,
+          "score": 0.13641111683935211
+        },
+        {
+          "label": "inverseSquare",
+          "log": -7.074963197966044,
+          "score": 0.1350262324044347
+        }
+      ]
+    },
+    {
+      "text": "It might be square or inverse square, I cannot decide.",
+      "label": "inverseSquare",
+      "score": 0.8002287845827668,
+      "margin": 0.6555122531302725,
+      "coverage": 0.3076923076923077,
+      "deferred": true,
+      "reasons": [
+        "Negation, uncertainty or an unsupported combination needs your interpretation."
+      ],
+      "evidence": [
+        {
+          "feature": "inverse",
+          "logOdds": 1.0884081184938683
+        },
+        {
+          "feature": "inverse_square",
+          "logOdds": 1.0884081184938683
+        }
+      ],
+      "ranked": [
+        {
+          "label": "inverseSquare",
+          "log": -17.95476108460401,
+          "score": 0.8002287845827668
+        },
+        {
+          "label": "root",
+          "log": -19.664881878614842,
+          "score": 0.1447165314524943
+        },
+        {
+          "label": "square",
+          "log": -21.155008331471183,
+          "score": 0.03261102497590751
+        },
+        {
+          "label": "inverse",
+          "log": -22.541302692591074,
+          "score": 0.008152756243976876
+        },
+        {
+          "label": "linear",
+          "log": -22.673182769541352,
+          "score": 0.007145451372427256
+        },
+        {
+          "label": "cube",
+          "log": -22.673182769541352,
+          "score": 0.007145451372427256
+        }
+      ]
+    },
+    {
+      "text": "The weather is cloudy and my cat is sleeping.",
+      "label": "linear",
+      "score": 0.16666666666666666,
+      "margin": 0,
+      "coverage": 0,
+      "deferred": true,
+      "reasons": [
+        "Too little familiar language.",
+        "The model cannot separate the meanings reliably."
+      ],
+      "evidence": [],
+      "ranked": [
+        {
+          "label": "linear",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "square",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "cube",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "inverse",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "inverseSquare",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "root",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        }
+      ]
+    },
+    {
+      "text": "두 배면 네 배가 됩니다.",
+      "label": "linear",
+      "score": 0.16666666666666666,
+      "margin": 0,
+      "coverage": 0,
+      "deferred": true,
+      "reasons": [
+        "Too little familiar language.",
+        "The model cannot separate the meanings reliably."
+      ],
+      "evidence": [],
+      "ranked": [
+        {
+          "label": "linear",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "square",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "cube",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "inverse",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "inverseSquare",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "root",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        }
+      ]
+    },
+    {
+      "text": "Output does not follow the square of input.",
+      "label": "root",
+      "score": 0.34878070531208694,
+      "margin": 0.07258887775530742,
+      "coverage": 0.14285714285714285,
+      "deferred": true,
+      "reasons": [
+        "Too little familiar language.",
+        "Negation, uncertainty or an unsupported combination needs your interpretation.",
+        "The model cannot separate the meanings reliably."
+      ],
+      "evidence": [
+        {
+          "feature": "square",
+          "logOdds": 0.23334772148845184
+        }
+      ],
+      "ranked": [
+        {
+          "label": "root",
+          "log": -5.455321115357702,
+          "score": 0.34878070531208694
+        },
+        {
+          "label": "inverseSquare",
+          "log": -5.688668836846153,
+          "score": 0.2761918275567795
+        },
+        {
+          "label": "square",
+          "log": -6.285998094508864,
+          "score": 0.15198265371141234
+        },
+        {
+          "label": "inverse",
+          "log": -6.979145275068809,
+          "score": 0.07599132685570616
+        },
+        {
+          "label": "linear",
+          "log": -7.01211529430638,
+          "score": 0.07352674328200753
+        },
+        {
+          "label": "cube",
+          "log": -7.01211529430638,
+          "score": 0.07352674328200753
+        }
+      ]
+    },
+    {
+      "text": "Multiply everything by zero.",
+      "label": "linear",
+      "score": 0.272185809650281,
+      "margin": 0.0846462387553013,
+      "coverage": 0.2,
+      "deferred": true,
+      "reasons": [
+        "Too little familiar language.",
+        "Negation, uncertainty or an unsupported combination needs your interpretation.",
+        "The model cannot separate the meanings reliably."
+      ],
+      "evidence": [
+        {
+          "feature": "multiply",
+          "logOdds": 0.37249508887059424
+        }
+      ],
+      "ranked": [
+        {
+          "label": "linear",
+          "log": -5.913503005638271,
+          "score": 0.272185809650281
+        },
+        {
+          "label": "square",
+          "log": -6.285998094508864,
+          "score": 0.1875395708949797
+        },
+        {
+          "label": "inverse",
+          "log": -6.285998094508864,
+          "score": 0.1875395708949797
+        },
+        {
+          "label": "cube",
+          "log": -6.318968113746434,
+          "score": 0.18145720643352078
+        },
+        {
+          "label": "root",
+          "log": -7.064759027791801,
+          "score": 0.08607585433384964
+        },
+        {
+          "label": "inverseSquare",
+          "log": -7.074963197966044,
+          "score": 0.08520198779238917
+        }
+      ]
+    },
+    {
+      "text": "The answer is 827094.",
+      "label": "linear",
+      "score": 0.16666666666666666,
+      "margin": 0,
+      "coverage": 0,
+      "deferred": true,
+      "reasons": [
+        "Too little familiar language.",
+        "The model cannot separate the meanings reliably."
+      ],
+      "evidence": [],
+      "ranked": [
+        {
+          "label": "linear",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "square",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "cube",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "inverse",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "inverseSquare",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "root",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        }
+      ]
+    },
+    {
+      "text": "I think it depends on several other changing variables.",
+      "label": "linear",
+      "score": 0.16666666666666666,
+      "margin": 0,
+      "coverage": 0,
+      "deferred": true,
+      "reasons": [
+        "Too little familiar language.",
+        "The model cannot separate the meanings reliably."
+      ],
+      "evidence": [],
+      "ranked": [
+        {
+          "label": "linear",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "square",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "cube",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "inverse",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "inverseSquare",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        },
+        {
+          "label": "root",
+          "log": -1.791759469228055,
+          "score": 0.16666666666666666
+        }
+      ]
+    }
+  ],
+  "threshold": {
+    "score": 0.75,
+    "margin": 0.15,
+    "coverage": 0.25
+  },
+  "allSentenceIds": [
+    "train-linear-1",
+    "train-linear-2",
+    "train-linear-3",
+    "train-linear-4",
+    "train-linear-5",
+    "train-linear-6",
+    "train-linear-7",
+    "train-linear-8",
+    "train-square-1",
+    "train-square-2",
+    "train-square-3",
+    "train-square-4",
+    "train-square-5",
+    "train-square-6",
+    "train-square-7",
+    "train-square-8",
+    "train-cube-1",
+    "train-cube-2",
+    "train-cube-3",
+    "train-cube-4",
+    "train-cube-5",
+    "train-cube-6",
+    "train-cube-7",
+    "train-cube-8",
+    "train-inverse-1",
+    "train-inverse-2",
+    "train-inverse-3",
+    "train-inverse-4",
+    "train-inverse-5",
+    "train-inverse-6",
+    "train-inverse-7",
+    "train-inverse-8",
+    "train-inverseSquare-1",
+    "train-inverseSquare-2",
+    "train-inverseSquare-3",
+    "train-inverseSquare-4",
+    "train-inverseSquare-5",
+    "train-inverseSquare-6",
+    "train-inverseSquare-7",
+    "train-inverseSquare-8",
+    "train-root-1",
+    "train-root-2",
+    "train-root-3",
+    "train-root-4",
+    "train-root-5",
+    "train-root-6",
+    "train-root-7",
+    "train-root-8",
+    "validation-linear-1",
+    "validation-linear-2",
+    "validation-linear-3",
+    "validation-square-1",
+    "validation-square-2",
+    "validation-square-3",
+    "validation-cube-1",
+    "validation-cube-2",
+    "validation-cube-3",
+    "validation-inverse-1",
+    "validation-inverse-2",
+    "validation-inverse-3",
+    "validation-inverseSquare-1",
+    "validation-inverseSquare-2",
+    "validation-inverseSquare-3",
+    "validation-root-1",
+    "validation-root-2",
+    "validation-root-3",
+    "test-linear-1",
+    "test-linear-2",
+    "test-linear-3",
+    "test-linear-4",
+    "test-square-1",
+    "test-square-2",
+    "test-square-3",
+    "test-square-4",
+    "test-cube-1",
+    "test-cube-2",
+    "test-cube-3",
+    "test-cube-4",
+    "test-inverse-1",
+    "test-inverse-2",
+    "test-inverse-3",
+    "test-inverse-4",
+    "test-inverseSquare-1",
+    "test-inverseSquare-2",
+    "test-inverseSquare-3",
+    "test-inverseSquare-4",
+    "test-root-1",
+    "test-root-2",
+    "test-root-3",
+    "test-root-4"
+  ],
+  "corpusSha256": "b7229c9b1e8c76d55aa868f26be7e8540ad2d41a31b93d26328f435e17d05753",
+  "limitations": [
+    "A small, authored corpus cannot establish generalization to real explanations.",
+    "Naive Bayes scores are uncalibrated; word-overlap can cause confident mistakes.",
+    "Negation/mixed claims are deliberately deferred. All classifications require learner confirmation.",
+    "No automatic grading, educational selection, learning-gain or multilingual claims."
+  ]
+}

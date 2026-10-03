@@ -1,0 +1,6 @@
+import test from'node:test';import assert from'node:assert/strict';import {readFile}from'node:fs/promises';import {infer,features}from'../model-v002.mjs';import {rows}from'../corpus.mjs';
+const m=JSON.parse(await readFile(new URL('../model-v002.json',import.meta.url),'utf8'));
+test('Actual trained six-class linear model can identify training contrasts',()=>{for(const s of ['train'])for(const r of rows(s))assert.equal(infer(m,r.text).label,r.label);});
+test('No accepted error on the frozen selection validation set',()=>{for(const r of rows('validation')){const p=infer(m,r.text);assert.ok(p.deferred||p.label===r.label);}});
+test('Unknown input, unsupported negation/combinations and overlength boundaries',()=>{for(const s of ['', '분류하지 마세요','not linear', 'maybe square or cube','qzx qzy qzz'])assert.equal(infer(m,s).deferred,true);assert.throws(()=>features('a'.repeat(601)));});
+test('Weights and output are actual finite learned values',()=>{assert.ok(m.weights.some(w=>w.some(x=>x!==0)));for(const r of rows('test')){const p=infer(m,r.text);assert.ok(Math.abs(p.ranked.reduce((s,r)=>s+r.score,0)-1)<1e-10);assert.ok(p.evidence.every(x=>Number.isFinite(x.contribution)&&x.contribution>0));}});

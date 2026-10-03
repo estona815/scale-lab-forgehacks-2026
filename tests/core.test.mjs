@@ -1,0 +1,14 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {ratio,compare,counterexamples,TOPICS,FORMS} from '../math.mjs';
+import {infer,features} from '../model.mjs';
+import {rows} from '../corpus.mjs';
+const model=JSON.parse(await readFile(new URL('../model.json',import.meta.url),'utf8'));
+test('Independent known ratios and inverse/root cases',()=>{assert.equal(ratio(2,2),4);assert.equal(ratio(3,3),27);assert.equal(ratio(2,-1),0.5);assert.equal(ratio(2,-2),0.25);assert.equal(ratio(4,0.5),2);assert.equal(ratio(0.25,-2),16);});
+test('Reciprocal scaling identities across domain',()=>{for(const p of [1,2,3,-1,-2,0.5])for(const s of [0.25,0.5,0.75,1,2,3,4])assert.ok(Math.abs(ratio(s,p)*ratio(1/s,p)-1)<1e-10);});
+test('Every wrong power has a counterexample even though all agree at one',()=>{for(const t of TOPICS)for(const [k,f]of Object.entries(FORMS)){assert.equal(compare(t.id,k,1).predicted,1);assert.equal(compare(t.id,k,1).expected,1);assert.equal(counterexamples(t.id,k).some(x=>x.differs),f.power!==t.power);}});
+test('Bounds/unknown powers/topics refuse non-finite, injection and prototype labels',()=>{for(const s of [NaN,Infinity,-1,0,0.249,4.01,'2'])assert.throws(()=>ratio(s,2));assert.throws(()=>ratio(2,99));assert.throws(()=>compare('missing','linear',2));for(const k of ['__proto__','constructor','<script>'])assert.throws(()=>compare('area',k,2));});
+test('Corpus sentences and IDs disjoint across train/validation/test',()=>{const r=['train','validation','test'].flatMap(rows);assert.equal(new Set(r.map(x=>x.id)).size,r.length);assert.equal(new Set(r.map(x=>x.text.toLowerCase())).size,r.length);});
+test('Actual learned inference changes with the explanation',()=>{assert.equal(infer(model,'The relationship is quadratic.').label,'square');assert.equal(infer(model,'The relationship is cubic.').label,'cube');assert.equal(infer(model,'Output is inversely proportional to input.').label,'inverse');});
+test('Negation, unknown language, empty and long text defer/refuse',()=>{for(const s of ['', '안녕하세요', 'I do not think the result is linear.','Maybe it is square or inverse.','qzxw qzxw'])assert.equal(infer(model,s).deferred,true);assert.throws(()=>features('a'.repeat(601)));assert.throws(()=>features(null));});
+test('Ranking finite and normalized with accountable known-word evidence',()=>{for(const r of rows('test')){const p=infer(model,r.text);assert.ok(Number.isFinite(p.score));assert.ok(Math.abs(p.ranked.reduce((s,x)=>s+x.score,0)-1)<1e-10);assert.ok(p.evidence.every(x=>Number.isFinite(x.logOdds)&&x.logOdds>0));}});
